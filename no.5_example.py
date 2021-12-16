@@ -15,6 +15,7 @@
 输出-1，即没有出现过6，返回-1。
 """
 
+# my code
 class Target:
 	def findTarget(self, A, target):
 		if target not in A:
@@ -37,3 +38,29 @@ if __name__ == '__main__':
 	print('输入数组：', C, ' 目标整数', target)
 	print('输出：',t.findTarget(C, target))
 	
+# book example 二分法
+class Solution:
+	# @parm  nums:整数数组
+	# @parm  target:目标数字
+	# @return  目标数字的第1个位置，从0开始
+	def binarySearch(self, nums, target):
+		return self.search(nums, 0, len(nums)-1, target)
+
+	def search(self, nums, start, end, target):
+		if start > end:
+			return -1
+		mid = (start + end)//2
+		if nums[mid] > target:
+			return search(nums, start, mid, target)
+		if nums[mid] == target:
+			return mid
+		if nums[mid] < target:
+			return search(nums, mid, end, target)
+
+if __name__ == '__main__':
+	my_solution = Solution()
+	nums = [1,2,3,4,5,6]
+	target = 3
+	targetIndex = my_solution.binarySearch(nums, target)
+	print('输入：nums = ',nums,' ','target = ',target)
+	print('输出：',targetIndex)
