@@ -31,7 +31,7 @@ if __name__ == '__main__':
 class Solution:
 	# @parm arr  输入待检查列表
 	# @return 返回没有重复的两个值的列表
-
+	# 位运算
 	def theTwoNumbers(self, a):
 		ans = [0, 0]
 		for i in a:
