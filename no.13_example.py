@@ -13,9 +13,21 @@ F2从18时刻进入，19时刻退出，运行时长为1。
 即F1从10时刻进入，18时刻退出；又从19时刻进入，20时刻退出，总运行时长为9。
 """
 
-s = ["F1Enter10", "F1Exit18", "F1Enter19", "F1Exit20"]
-for i in s:
-    if "Enter" in i:
-        print(i.split("Enter"))
-    if "Exit" in i:
-        print(i.split("Exit"))
+class RunTime:
+    def runTime(self, s):
+        enter_list = []
+        exit_list = []
+        for i in s:
+            if "Enter" in i:
+                enter_list.append(i.split("Enter"))
+            if "Exit" in i:
+                exit_list.append(i.split("Exit"))
+        for i in enter_list:
+            for j in exit_list:
+                if i[0] == j[0]:
+
+
+if __name__ == '__main__':
+    s = ["F1Enter10", "F1Exit18", "F1Enter19", "F1Exit20"]
+    r = RunTime()
+    r.runTime(s)
